@@ -1,0 +1,219 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Inter', sans-serif; /* Fuente principal */
+    background-color: #f0f4f8; /* Color de fondo gris azulado claro */
+    color: #1e293b; /* Color de texto principal (Slate-800) */
+    margin: 0; /* Eliminar margen por defecto */
+    padding: 0; /* Eliminar padding por defecto */
+    display: flex; /* Centrar contenido */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: flex-start; /* Alinear al inicio verticalmente */
+    min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+}
+
+/* Contenedor principal del juego */
+#game-container {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo del contenedor del juego */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+}
+
+/* Título del juego */
+.game-title {
+    font-size: 2rem; /* Tamaño de fuente grande (equivalente a text-3xl de Tailwind) */
+    font-weight: 700; /* Negrita (equivalente a font-bold de Tailwind) */
+    color: #1e3a8a; /* Color de texto azul oscuro (Indigo-800) */
+    text-align: center; /* Texto centrado */
+    margin-bottom: 30px; /* Margen inferior */
+    padding-top: 20px; /* Espaciado superior */
+}
+
+/* Estructura de la carta */
+.card {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 24px; /* Espaciado interno */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra */
+    transition: transform 0.3s ease; /* Transición suave para efectos */
+    width: 90%; /* Ancho relativo */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Margen para centrar */
+}
+
+/* Estilo de la pregunta en la carta */
+.card-question {
+    font-size: 1.25rem; /* Tamaño de fuente (equivalente a text-xl de Tailwind) */
+    font-weight: 600; /* Semi-negrita (equivalente a font-semibold de Tailwind) */
+    margin-bottom: 20px; /* Margen inferior */
+    color: #0f172a; /* Color de texto muy oscuro (Slate-900) */
+}
+
+/* Estilo de los botones de opción */
+.option-button {
+    display: block; /* Ocupar todo el ancho disponible */
+    width: 100%; /* Ancho completo */
+    text-align: left; /* Texto alineado a la izquierda */
+    padding: 12px 16px; /* Espaciado interno */
+    margin-bottom: 10px; /* Margen inferior */
+    border: 1px solid #cbd5e1; /* Borde color pizarra claro (Slate-300) */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f8fafc; /* Fondo pizarra muy claro (Slate-50) */
+    color: #334155; /* Color de texto pizarra oscuro (Slate-700) */
+    transition: background-color 0.2s, border-color 0.2s; /* Transiciones suaves */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+.option-button:hover {
+    background-color: #e2e8f0; /* Fondo al pasar el ratón (Slate-200) */
+    border-color: #94a3b8; /* Borde al pasar el ratón (Slate-400) */
+}
+
+/* Estilo para opción correcta */
+.option-button.correct {
+    background-color: #dcfce7; /* Fondo verde claro (Green-100) */
+    border-color: #4ade80; /* Borde verde (Green-400) */
+    color: #166534; /* Texto verde oscuro (Green-800) */
+}
+
+/* Estilo para opción incorrecta */
+.option-button.incorrect {
+    background-color: #fee2e2; /* Fondo rojo claro (Red-100) */
+    border-color: #f87171; /* Borde rojo (Red-400) */
+    color: #991b1b; /* Texto rojo oscuro (Red-800) */
+}
+
+/* Estilo del área de explicación */
+.explanation {
+    margin-top: 20px; /* Margen superior */
+    padding: 16px; /* Espaciado interno */
+    background-color: #e0f2fe; /* Fondo azul muy claro (Light blue-50) */
+    border-left: 4px solid #38bdf8; /* Borde izquierdo azul cielo (Sky-500) */
+    border-radius: 4px; /* Bordes redondeados (solo esquinas derechas si el izquierdo es una línea) */
+    font-size: 0.95rem; /* Tamaño de fuente */
+    color: #0c4a6e; /* Texto azul oscuro (Sky-800) */
+}
+
+/* Estilo de los mensajes de feedback (Correcto/Incorrecto) */
+.feedback-message {
+    margin-top: 10px; /* Margen superior */
+    padding: 8px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: 500; /* Peso de fuente medio */
+}
+
+.feedback-message.correct {
+    background-color: #dcfce7; /* Fondo verde claro (Green-100) */
+    color: #166534; /* Texto verde oscuro (Green-800) */
+}
+
+.feedback-message.incorrect {
+    background-color: #fee2e2; /* Fondo rojo claro (Red-100) */
+    color: #991b1b; /* Texto rojo oscuro (Red-800) */
+}
+
+/* Estilo de los botones de navegación (Siguiente, Jugar de Nuevo) */
+.nav-button {
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #3b82f6; /* Fondo azul (Blue-500) */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar cursor */
+    transition: background-color 0.2s; /* Transición suave */
+    margin-top: 20px; /* Margen superior */
+}
+
+.nav-button:hover {
+    background-color: #2563eb; /* Fondo azul más oscuro al pasar el ratón (Blue-600) */
+}
+
+.nav-button:disabled {
+    background-color: #9ca3af; /* Fondo gris si está deshabilitado (Gray-400) */
+    cursor: not-allowed; /* Cursor no permitido */
+}
+
+/* Contenedor de la puntuación y número de pregunta */
+.score-container {
+    text-align: center; /* Texto centrado */
+    margin-top: 10px; /* Margen superior */
+    margin-bottom: 20px; /* Margen inferior añadido para separar de la barra de progreso */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    font-weight: 500; /* Peso de fuente medio */
+}
+
+/* Contenedor de la barra de progreso */
+.progress-bar-container {
+    width: 100%; /* Ancho completo */
+    background-color: #e5e7eb; /* Fondo gris claro (Gray-200) */
+    border-radius: 9999px; /* Bordes muy redondeados para forma de píldora */
+    height: 10px; /* Altura de la barra */
+    margin-bottom: 20px; /* Margen inferior */
+    overflow: hidden; /* Para que la barra interna no se salga de los bordes redondeados */
+}
+
+/* Barra de progreso actual */
+.progress-bar {
+    background-color: #3b82f6; /* Fondo azul (Blue-500) */
+    height: 100%; /* Altura completa del contenedor */
+    border-radius: 9999px; /* Mismos bordes redondeados */
+    transition: width 0.3s ease-in-out; /* Transición suave para el ancho */
+}
+
+/* Estilo de la carta de puntuación final */
+.final-score-card {
+    text-align: center; /* Texto centrado */
+}
+
+.final-score-card h2 {
+    font-size: 1.75rem; /* Tamaño de fuente (equivalente a text-2xl de Tailwind) */
+    color: #1e3a8a; /* Color azul oscuro (Indigo-800) */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.final-score-card p {
+    font-size: 1.25rem; /* Tamaño de fuente (equivalente a text-xl de Tailwind) */
+    margin-bottom: 25px; /* Margen inferior */
+}
+
+/* Utilidad para flotar a la derecha (para el botón "Siguiente Pregunta") */
+.float-right {
+    float: right;
+}
+
+/* Limpiar flotantes después del botón (si es necesario) */
+#card-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Media Query para mejorar la visualización en pantallas pequeñas */
+@media (max-width: 640px) {
+    .card {
+        padding: 16px; /* Reducir padding en cartas */
+        width: 95%; /* Aumentar un poco el ancho relativo */
+    }
+    .card-question {
+        font-size: 1.1rem; /* Reducir tamaño de fuente de la pregunta */
+    }
+    .game-title {
+        font-size: 1.5rem; /* Reducir tamaño del título */
+        margin-bottom: 20px;
+    }
+    .option-button {
+        padding: 10px 12px; /* Reducir padding de botones de opción */
+        font-size: 0.9rem; /* Reducir tamaño de fuente de opciones */
+    }
+    .nav-button {
+        padding: 8px 16px; /* Reducir padding de botones de navegación */
+        font-size: 0.9rem;
+    }
+    .final-score-card h2 {
+        font-size: 1.5rem;
+    }
+    .final-score-card p {
+        font-size: 1.1rem;
+    }
+}
